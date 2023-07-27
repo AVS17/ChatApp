@@ -1,0 +1,11 @@
+<%= turbo_frame_tag 'rooms_controller' do%>
+  <main class="flex w-full h-screen bg-[#181D31]">
+    <%= render 'shared/side_bar'%>
+    <section class="flex flex-col items-center justify-center w-full h-screen gap-5">
+      <%= image_tag('icon_chat.png', width:200)%>
+      <h1 class="my-4 text-4xl font-bold text-white">Chat App - Ruby On Rails 7</h1>  
+      <p class="font-semibold text-center text-white">This is the ChatApp with RoR 7</p>
+    </section>
+  </main>
+<%end%>
+

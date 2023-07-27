@@ -1,0 +1,27 @@
+<main class="bg-[#181D31] h-screen flex flex-col justify-center gap-10">
+  <section class="flex flex-col items-center gap-1">
+    <%= image_tag('icon_chat.png', width:100)%>
+    <h1 class="my-4 text-4xl font-bold text-white">Chat App - Ruby On Rails 7</h1>
+    <p class="font-semibold text-center text-white">This is the ChatApp with RoR 7</p>
+  </section>
+  <section class="flex flex-col items-center ">
+    <h2 class="mb-5 text-2xl font-bold text-white">Log in</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name),class:'flex flex-col') do |f| %>
+      <div class="flex items-center gap-1 my-2 w-96">
+        <%= f.label :email, class: 'text-white font-semibold text-sm w-24' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'text-sm font-medium rounded w-full' %>
+      </div>
+
+      <div class="flex items-center gap-1 my-2 w-96">
+        <%= f.label :password, class: 'text-white font-semibold text-sm w-24' %>
+        <%= f.password_field :password, autocomplete: "current-password", class:'text-sm font-medium rounded w-full' %>
+      </div>
+      
+      <div class="flex items-center justify-center gap-1 my-5">
+        <%= f.submit "Log in",class:'bg-green-800 rounded p-3 text-white font-semibold cursor-pointer hover:bg-green-600' %>
+      </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </section>
+</main>

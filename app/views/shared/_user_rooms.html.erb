@@ -1,0 +1,12 @@
+<section class="flex flex-col w-full">
+    <span class="mt-5 font-semibold text-center text-white"><%= current_user.email %></span>
+    <div class="flex items-center justify-center mt-2">
+        <%= button_to 'Log Out', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'px-3 py-1 text-white bg-red-700 font-semibold text-sm rounded'%>
+    </div>
+    <h3 class="mt-3 mb-2 text-xl font-bold text-center text-white">My rooms</h3>
+    <div class="flex flex-col w-full gap-2 px-5" id="user_<%= current_user.id %>_rooms">
+        <% current_user.rooms.all.each do |room| %>
+            <%= render 'shared/room', room:room %>
+        <% end %>
+    </div>
+</section>
